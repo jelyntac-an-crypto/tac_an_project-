@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'report_form_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -39,11 +39,28 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 24),
+
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/login');
                 },
                 child: const Text('Get Started'),
+              ),
+
+              const SizedBox(height: 12),
+
+              OutlinedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const ReportFormScreen(),
+                    ),
+                  );
+                },
+                icon: const Icon(Icons.assignment),
+                label: const Text('Open Report Form'),
               ),
             ],
           ),
